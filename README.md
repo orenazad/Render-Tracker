@@ -343,7 +343,7 @@ This information is pushed to the database in `writeUserData()`. Feel free to [g
 
 One of the most useful features of the Realtime database is the ability to "listen" for changes on a branch. This feature is essential to Render Tracker as it powers the iOS UI and allows us to avoid constantly querying the database.
 
-<img width="457" alt="utils JSON Tree" src="https://user-images.githubusercontent.com/70298555/137467356-aad43c53-374b-4e66-af0e-f9f866cd1dfb.png">
+<img width="456" alt="utils JSON Tree" src="https://user-images.githubusercontent.com/70298555/137467356-aad43c53-374b-4e66-af0e-f9f866cd1dfb.png">
 
 
 > The `utils` branch of the tree contains the "buttons" for each user, as well as the project name and APNS and Firebase cloud messaging notification tokens. 
@@ -458,13 +458,6 @@ We can then create a payload with the `projectName` and `compName` from earlier 
     });
 ```
 > Notification tokens are regularly updated by the client, so we make sure to remove any tokens which aren't registered anymore to keep the database clean!
-
-
-```
-screenshot here please
-```
-
-> The push notifications look great!
 
 Beyond sending push notifications, there are several other cloud functions which handle important tasks like user authorization and setting custom security claims! Feel free to read the rest of the server-side code [here LINK NEEDED](LINK).
 
