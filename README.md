@@ -317,11 +317,9 @@ Because Firebase is an extremely prevalent and popular platform with [great docu
 
 Each user's project and render queue info needs to be uploaded to an online database so that they can retrieve it from the mobile app, and recieve notifications when items have been completed. [Firebase offers two different databases for varying use-cases](https://firebase.google.com/docs/firestore/rtdb-vs-firestore). I decided to use the Realtime database because it was better suited to what Render Tracker needed. 
 
-The Realtime database is stored as a JSON tree. In our case, one of the branches is `users`, which holds the render queue info for each user under their Render Tracker `uid`.
+The Realtime database is stored as a JSON data, and can be visualized as a tree. In our case, one of the branches is `users`, which holds the render queue info for each user under their Render Tracker `uid`.
 
-```
-image here please
-```
+<img width="456" alt="users JSON Tree" src="https://user-images.githubusercontent.com/70298555/137468499-2c03c6cd-2315-4139-acea-c5eceaca3a32.png">
 
 > The user branch of the JSON tree. Don't worry, the two unique identifiers shown above are my accounts!
 
@@ -332,9 +330,7 @@ This information is pushed to the database in `writeUserData()`. Feel free to [g
 
 One of the most useful features of the Realtime database is the ability to "listen" for changes on a branch. This feature is essential to Render Tracker as it powers the iOS UI and allows us to avoid constantly querying the database.
 
-```
-utils image here please
-```
+<img width="457" alt="utils JSON Tree" src="https://user-images.githubusercontent.com/70298555/137467356-aad43c53-374b-4e66-af0e-f9f866cd1dfb.png">
 
 
 > The `utils` branch of the tree contains the "buttons" for each user, as well as the project name and APNS and Firebase cloud messaging notification tokens. 
