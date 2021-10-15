@@ -412,7 +412,7 @@ exports.sendDoneNotification = functions.database.ref("/users/{uid}/{index}/Rend
       );
 // The rest of the function is continued below!
 ```
-> I developed database security rules so that users can't access the database outside of their own `uid` branches. The server-side functions, however, have admin-privledges in order to listen to all branches. 
+> I developed database security rules so that users can't access the database outside of their own `uid` branches. The server-side functions, however, have admin privileges in order to listen to all branches. 
 
 While more complex, this function works off the same "listening" principal that we used earlier! It listens to changes in `RenderStatus` for every `uid` in the tree, and when any value is updated, it stores that `uid` and `index` for use. 
 
