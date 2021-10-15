@@ -6,9 +6,9 @@ I wanted to detail my experience and walkthrough the process for anyone interest
 
 ---
 <p align="middle">
-  <img src="https://user-images.githubusercontent.com/70298555/137476590-3db878a1-594a-4bbd-aa1d-308527297e76.png" width="250" />
+  <img src="https://user-images.githubusercontent.com/70298555/137476590-3db878a1-594a-4bbd-aa1d-308527297e76.png" width="250" alt="Screenshot of Render Tracker" />
   <img height="" hspace="30"/>
-  <img src="https://user-images.githubusercontent.com/70298555/137480416-650984ea-ea7b-4cec-93b1-e697e9359cc7.png" width="250" />
+  <img src="https://user-images.githubusercontent.com/70298555/137480416-650984ea-ea7b-4cec-93b1-e697e9359cc7.png" width="250" alt="Screenshot of Render Tracker Notifications" />
 </p>
 
 ---
@@ -308,7 +308,8 @@ With it's uncountable number of built in panels, (and the many extra panels user
 
 Because I wanted Render Tracker to be more of a "set-it and forget-it" type of experience, I didn't need a fancy or intricate UI, and I felt like a simple and clean interface would go a long way.
 
-![CEP Panel Log-in](https://user-images.githubusercontent.com/70298555/137471330-478e6886-fe31-48a8-85d1-3d3cacc9f631.png)
+<img width="456" alt="CEP Panel Log-in" src="https://user-images.githubusercontent.com/70298555/137471330-478e6886-fe31-48a8-85d1-3d3cacc9f631.png">
+
 > The panel's log in display. After users log-in, the panel gets out of the way and only displays render and connection status.
 
 
