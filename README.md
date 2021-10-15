@@ -299,6 +299,10 @@ With it's uncountable number of built in panels, (and the many extra panels user
 
 Because I wanted Render Tracker to be more of a "set-it and forget-it" type of experience, I didn't need a fancy or intricate UI, and I felt like a simple and clean interface would go a long way.
 
+![CEP Panel Log-in](https://user-images.githubusercontent.com/70298555/137471330-478e6886-fe31-48a8-85d1-3d3cacc9f631.png)
+> The panel's log in display. After users log-in, the panel gets out of the way and only displays render and connection status.
+
+
 I used [Adobe's Spectrum CSS](https://spectrum.adobe.com) in order to make sure my extension was visually seamless with After Effects and Adobe's style and design guidelines.
 
 ___
