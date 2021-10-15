@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="css/styles.css" />
+	<link rel="stylesheet" href="css/coral.min.css">
+	<script src="js/coral.min.js"></script>
+	<script>
+		var isNS = navigator.appName == "Netscape" ? 1 : 0;
+
+		if (navigator.appName == "Netscape")
+			document.captureEvents(Event.MOUSEDOWN || Event.MOUSEUP);
+
+		function mischandler() {
+			return false;
+		}
+
+		function mousehandler(e) {
+			var myevent = isNS ? e : event;
+			var eventbutton = isNS ? myevent.which : myevent.button;
+			if (eventbutton == 2 || eventbutton == 3) return false;
+		}
+		document.oncontextmenu = mischandler;
+		document.onmousedown = mousehandler;
+		document.onmouseup = mousehandler;
+	</script>
+</head>
+
+<body scroll="no" class="coral--darkest">
+
+	<div id="loading" class="hidden" style="display: block">
+		<h4 style="margin-top: 4px;">
+			<center>
+				Loading Render Tracker!
+			</center>
+			<center>
+				<coral-progress indeterminate=""></coral-progress>
+			</center>
+		</h4>
+	</div>
+
+	<div id="loggedOut" class="hidden" style="display: none">
+		<center>
+			<h4 style="margin-top: 4px; margin-bottom: 4px;">Render Tracker</h4>
+			<input id="txtEmail" type="email" is="coral-textfield" placeholder="Email" aria-label="text input">
+			<input id="txtPassword" type="password" is="coral-textfield" placeholder="Password" aria-label="text input">
+		</center>
+		<center style="margin-top: 8px"><button onclick="loginUser()" is="coral-button" variant="cta">Log In</button>
+		<!-- <button onclick="createUser()" is="coral-button" variant="cta">Sign Up!</button> -->
+		</center>
+	</div>
+
+	<div id="loggedIn" class="hidden" style="display: none">
+		<center style="cursor: default;">
+			<h3 style="margin-top: 4px; margin-bottom: 4px;"><status-indicator active></status-indicator> Online</h3>
+			<button id="logOutButton" onclick="logoutUser()">Log Out</button>
+		</center>
+	</div>
+
+	<div id="RenderingDiv" class="hidden" style="display: none">
+		<h4 style="color:#2680eb; margin-top: 0px; margin-bottom: 0px;">
+			<center>Rendering!</center>
+		</h4>
+		<h5 style="margin-top: 0px;">
+			<center>
+				After Effects may freeze while rendering,
+				but will unfreeze when finished!
+			</center>
+		</h5>
+	</div>
+
+	<div id="NotSubscribed" class="hidden" style="display: none">
+		<h4 style="color:#2680eb; margin-top: 0px; margin-bottom: 0px;">
+			<center>Unsubscribed</center>
+		</h4>
+		<h5 style="margin-top: 0px;">
+			<center>
+				You are not subscribed
+			</center>
+		</h5>
+	</div>
+
+	<div id="buttonHolder" class="hidden" style="display: block">
+		<h1>Debug</h1>
+		<button id="grabStatusFromIndex" onclick="grabStatusFromIndex()">
+			Get Status!
+		</button>
+		<button id="grabNameFromIndex" onclick="grabNameFromIndex()">
+			Get Name!
+		</button>
+		<button id="grabArrayAndDequeue" onclick="grabArrayAndDequeue()">
+			grabArray
+		</button>
+		<button onclick="openhtml()">Open Website</button>
+		<button onclick="grabNumRQItems()">NumRQItems</button>
+		<button onclick="writeUserData()">Firebase</button>
+		<button onclick="checkUser()">CheckUser</button>
+		<button onclick="forceIDToken()">IDToken</button>
+		<button onclick="alertEntitlement()">Alert Entitlement</button>
+	</div>
+
+	<script src="js/libs/CSInterface.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+</html>

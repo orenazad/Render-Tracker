@@ -1,0 +1,55 @@
+{
+  "_from": "status-indicator",
+  "_id": "status-indicator@1.0.9",
+  "_inBundle": false,
+  "_integrity": "sha512-xaUIXfWA++prLDv49U2xrcIJAMKb0djfpjDc4aApW+bDIx9HzI26CHWKEoAp/DuvUlyPwBj4Q5VURntV9qa71A==",
+  "_location": "/status-indicator",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "status-indicator",
+    "name": "status-indicator",
+    "escapedName": "status-indicator",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/status-indicator/-/status-indicator-1.0.9.tgz",
+  "_shasum": "d802ae5b53e432d4a36d9b0f195fe1049385ac37",
+  "_spec": "status-indicator",
+  "_where": "C:\\Program Files (x86)\\Common Files\\Adobe\\CEP\\extensions\\Extension Testing",
+  "author": {
+    "name": "Tan Nhu"
+  },
+  "bugs": {
+    "url": "https://github.com/tnhu/status-indicator/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Status indicator web component",
+  "homepage": "https://github.com/tnhu/status-indicator#readme",
+  "keywords": [
+    "status",
+    "indicator",
+    "dot",
+    "color dot",
+    "status dot",
+    "status indicator",
+    "pulse",
+    "pulse dot",
+    "animation"
+  ],
+  "license": "MIT",
+  "name": "status-indicator",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tnhu/status-indicator.git"
+  },
+  "style": "styles.css",
+  "version": "1.0.9"
+}
