@@ -4,7 +4,14 @@ I've spent a lot of time working in After Effects and Premiere Pro. As much as I
 
 I wanted to detail my experience and walkthrough the process for anyone interested in full-stack development, developing for Adobe applications, or for anyone who wants a (hopefully) fascinating read! If you are only interested in one part of this project, feel free to skip around to wherever you'd like.
 
-- [Developing for After Effects](#developing-for-after-effects)
+
+<p align="middle">
+  <img src="https://user-images.githubusercontent.com/70298555/137476590-3db878a1-594a-4bbd-aa1d-308527297e76.png" width="250" />
+  <img height="" hspace="30"/>
+  <img src="https://user-images.githubusercontent.com/70298555/137480416-650984ea-ea7b-4cec-93b1-e697e9359cc7.png" width="250" />
+</p>
+
+- [Intro: Developing for After Effects](#intro-developing-for-after-effects)
   - [**Adobe ExtendScript**](#adobe-extendscript)
   - [**Common Extensibility Platform**](#common-extensibility-platform)
   - [**After Effects Plug-In**](#after-effects-plug-in)
@@ -26,7 +33,10 @@ I wanted to detail my experience and walkthrough the process for anyone interest
 
 ---
 
-## Developing for After Effects
+
+![iOS2](https://user-images.githubusercontent.com/70298555/137478042-d9b15396-ef92-45d3-b89a-daf45afef92b.png)
+
+## Intro: Developing for After Effects
 
 Adobe primarily provides three avenues (with a fourth on the way!) to develop for creative cloud applications, all at varying levels of complexity and capability. 
 
