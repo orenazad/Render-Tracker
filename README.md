@@ -22,7 +22,7 @@ I wanted to detail my experience and walkthrough the process for anyone interest
   - [**Realtime Database**](#realtime-database)
   - [**Push Notifications**](#push-notifications)
 - [Chapter 4: Down the iOS Rabbit-Hole](#chapter-4-down-the-ios-rabbit-hole)
-- [Disaster Strikes, Concluding Thoughts](#disaster-strikes-concluding-thoughts)
+- [**Disaster Strikes, Concluding Thoughts**](#disaster-strikes-concluding-thoughts)
 
 ---
 
@@ -700,7 +700,7 @@ struct AfterEffectsView: View {
 
 That's it! We've covered most major parts of the project. We began with Adobe ExtendScript to pull relevant information out of After Effects, and then used Adobe's Common Extensibility Platform (CEP) in order to move that data into Firebase's realtime database. From there, we added realtime push notifications, and then developed an iOS app to beautifully represent that data and lets users remotely control their queue!
 
-## **Disaster Strikes**, Concluding Thoughts
+## Disaster Strikes, Concluding Thoughts
 
 **On June 22 2021, [Adobe announced render queue notifications](https://community.adobe.com/t5/after-effects-beta-discussions/render-queue-notifications-now-available-in-18-4x37/m-p/12133791) as the latest feature available in the After Effects Beta.**
 
