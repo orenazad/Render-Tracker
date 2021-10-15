@@ -293,11 +293,9 @@ I personally thought it was extremely important to make Render Tracker as perfor
 
 With it's uncountable number of built in panels, (and the many extra panels users may have due to plug-ins and other extensions) After Effects already looks wild enough. 
 
-```
-picture here please
-```
+![AfterEffectsScreen](https://user-images.githubusercontent.com/70298555/137464984-b2f610a1-6c39-418e-a14b-2ab6018a4a8d.png)
 
->My usual After Effects workspace. Pretty full even without a project or composition open!
+>My usual After Effects workspace, without a project or composition open. This is as clean as it will ever be!
 
 Because I wanted Render Tracker to be more of a "set-it and forget-it" type of experience, I didn't need a fancy or intricate UI, and I felt like a simple and clean interface would go a long way.
 
