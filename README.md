@@ -272,7 +272,7 @@ async function renderAndUpdate() {
 
 I personally thought it was extremely important to make Render Tracker as performant as possible. However, it isn't possible to intercept the native After Effects render button or listen for items being *added* to the queue.[^1] This left me with two options in order to keep the online database updated with the Render Queue: 
 
-[^1]: Technically, this is possible through the use of a plugin and the C++ SDK. However, as mentioned in the first chapter, the `RenderQueueMonitorSuite` needed in order to monitor the Render Queue [hasn't been working in recent versions of After Effects.](https://community.adobe.com/t5/after-effects-discussions/aegp-registerlistener-in-ae-sdk-2017-1/m-p/12046478#M171237))
+[^1]: This is possible through the use of a plugin and the C++ SDK. However, as mentioned in the intro, the `RenderQueueMonitorSuite` needed in order to monitor the Render Queue [hasn't been working in recent versions of After Effects.](https://community.adobe.com/t5/after-effects-discussions/aegp-registerlistener-in-ae-sdk-2017-1/m-p/12046478#M171237))
 
 1. Implement my own render button which executes the function above.
    1. The primary issue with this solution is that starting renders via `app.project.renderQueue.render()` [freezes After Effects](https://adobe-video.uservoice.com/forums/911311-after-effects/suggestions/34795705-after-effects-appears-frozen-when-render-launched) until rendering is finished and produces a crash if the user attempts to further interact with AE.
