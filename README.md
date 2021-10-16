@@ -31,7 +31,7 @@ I wanted to detail my experience and walkthrough the process for anyone interest
   - [**Realtime Database**](#realtime-database)
   - [**Push Notifications**](#push-notifications)
 - [Chapter 4: Down the iOS Rabbit-Hole](#chapter-4-down-the-ios-rabbit-hole)
-- [**Disaster Strikes, Concluding Thoughts**](#disaster-strikes-concluding-thoughts)
+- [Disaster Strikes, Concluding Thoughts](#disaster-strikes-concluding-thoughts)
 
 ---
 
@@ -119,7 +119,7 @@ function createArrayAndDequeue() {
 
 Not everything in the Render Queue is ready to be encoded. Some items may have already been finished, purposefully skipped, missing output locations or have failed for various reasons. `createArrayAnddDequeue()` returns an array with the index of all items ***ready for encoding*** and de-queues them so that they can automatically be queued and rendered one at a time. 
 
-ExtendScript functions serve as the foundation for any CEP Extension/Panel. You can view the other ExtendScript functions I wrote for Render Tracker [here LINK NEEDED](LINK).
+ExtendScript functions serve as the foundation for any CEP Extension/Panel. You can view the other ExtendScript functions I wrote for Render Tracker [here]([LINK](https://github.com/orenazad/Render-Tracker/blob/main/CEP-Panel/jsx/aftereffects.jsx)).
 
 ---
 ## Chapter 2: CEP Party Time
@@ -296,7 +296,7 @@ I personally thought it was extremely important to make Render Tracker as perfor
  ```
  > `checkRQChange()` is run on a regular interval to update the database when items are changed or updated in the Render Queue. 
 
- I'll return to more of the CEP panel's code in the next chapter, but feel free to look through [main.js LINK NEEDED](LINK) if you would like a more complete picture of how the extension works!
+ I'll return to more of the CEP panel's code in the next chapter, but feel free to look through [main.js]([LINK](https://github.com/orenazad/Render-Tracker/blob/main/CEP-Panel/js/main.js)) if you would like a more complete picture of how the extension works!
 
 ### **A Spoonful of HTML and CSS**
 
@@ -325,7 +325,7 @@ Let's figure out how we can get all this data out of After Effects and *into the
 ### **What is Firebase?**
 Firebase is part of Google's cloud development kit. It provides cloud-related tools in the development of iOS, Android, and web apps. I previously mentioned that a CEP Panel was basically a little browser running in After Effects- this means we can use Firebase's web app tools for our extension!
 
-Because Firebase is an extremely prevalent and popular platform with [great documentation](https://firebase.google.com/docs), I'll only be covering topics that are particularly relevant to Render Tracker. I invite you to take a look through the repository [particularly the cloud functions and extension file LINK NEEDED](LINK) if you would like to see the rest of Firebase in action.
+Because Firebase is an extremely prevalent and popular platform with [great documentation](https://firebase.google.com/docs), I'll only be covering topics that are particularly relevant to Render Tracker. I invite you to take a look through this repository, [particularly the cloud functions](https://github.com/orenazad/Render-Tracker/blob/main/Cloud-Functions/index.js) and the CEP panel's [main.js]([LINK](https://github.com/orenazad/Render-Tracker/blob/main/CEP-Panel/js/main.js)) if you would like to see the rest of the Firebase code in action.
 
 ### **Realtime Database**
 
@@ -460,12 +460,12 @@ We can then create a payload with the `projectName` and `compName` from earlier 
 ```
 > Notification tokens are regularly updated by the client, so we make sure to remove any tokens which aren't registered anymore to keep the database clean!
 
-Beyond sending push notifications, there are several other cloud functions which handle important tasks like user authorization and setting custom security claims! Feel free to read the rest of the server-side code [here LINK NEEDED](LINK).
+Beyond sending push notifications, there are several other cloud functions which handle important tasks like user authorization and setting custom security claims! Feel free to read the rest of the server-side code [here](https://github.com/orenazad/Render-Tracker/blob/main/Cloud-Functions/index.js).
 
 
 ## Chapter 4: Down the iOS Rabbit-Hole
 
-Similiar to Firebase, I won't cover all the intracies of developing for iOS, and will only cover topics that were relevant to Render Tracker specifically! You can [find iOS documentation here](https://developer.apple.com/documentation/), and the iOS developer community is absolutely massive with tons of great resources to learn from and get started! If you would like to view how the full iOS app works, I invite you to take a look at the files [here! LINK NEEDED](LINK)
+Similiar to Firebase, I won't cover all the intracies of developing for iOS, and will only cover topics that were relevant to Render Tracker specifically! You can [find iOS documentation here](https://developer.apple.com/documentation/), and the iOS developer community is absolutely massive with tons of great resources to learn from and get started! If you would like to better understand how the full iOS app works, you can view the files in [the iOS directory of this repo](https://github.com/orenazad/Render-Tracker/tree/main/iOS).
 
 Before we can start developing a UI, we need to pull our info down from the database.
 
