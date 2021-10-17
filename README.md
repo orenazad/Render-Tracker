@@ -705,11 +705,11 @@ That's it! We've covered most major parts of the project. We began with Adobe Ex
 
 ## Disaster Strikes, Concluding Thoughts
 
+The final product works works exactly as I hoped. The display on the app is updated seamlessly and with no noticeable latency. The notifications are sent out instantly and reliably. The render and clear-queue buttons on the app work quickly and flawlessly. I definitely feel that I made something I can be very proud of, and for that alone I think the project was worth it. 
+
 **On June 22 2021, [Adobe announced render queue notifications](https://community.adobe.com/t5/after-effects-beta-discussions/render-queue-notifications-now-available-in-18-4x37/m-p/12133791) as the latest feature available in the After Effects Beta.**
 
 It was very bittersweet. I was genuinely excited that Adobe was finally implementing this feature natively into After Effects. After all, I only decided to develop Render Tracker because I really believed it would be valuable to users like myself.
-
-The final product works works exactly as I hoped. The display on the app is updated seamlessly and with no noticeable latency. The notifications are sent out instantly and reliably. The render and clear-queue buttons on the app work quickly and flawlessly. I definitely feel that I made something I can be very proud of, and for that alone I think the project was worth it. 
 
 Looking back, the whole process was quite enjoyable and undoubtedly a valuable and irreplaceable learning experience. It provided software engineering and development experience which simply can't be taught in the classroom. Besides, now I can share the code here and *hopefully* provide a resource for others.
 
