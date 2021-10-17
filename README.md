@@ -1,6 +1,6 @@
 # Render-Tracker<!-- omit in toc -->
 
-I've spent a lot of time working in After Effects and Premiere Pro. As much as I love these programs, I've always felt they were lacking important functionality when it came to communicating encoding progress with users. As a computer science student at UC Berkeley, I decided to take the challenge myself and develop a solution. I created Render Tracker, a full-stack iOS application which let users manage and track the render queue, and recieve push notifications upon render completion!
+I've spent a lot of time working in After Effects and Premiere Pro. As much as I love these programs, I've always felt they had been lacking important functionality when it came to communicating encoding progress with users. As a computer science student at UC Berkeley, I decided to take the challenge myself and develop a solution. I created Render Tracker, a full-stack iOS application which lets users manage and track the render queue, and receive push notifications upon render completion!
 
 I wanted to detail my experience and walkthrough the process for anyone interested in full-stack development, developing for Adobe applications, or for anyone who wants a (hopefully) fascinating read! If you are only interested in one part of this project, feel free to skip around to wherever you'd like.
 
@@ -53,7 +53,7 @@ Adobe publishes a full SDK for virtually all Creative Cloud applications. Plugin
 
 ### **Choosing a Development Platform** 
 
-Experiment! There are pros and cons to each development platform, and unless a feature you would like to implement strictly requires one, I would reccommend trying them all and deciding which can will allow you to best achieve your goals.
+Experiment! There are pros and cons to each development platform, and unless a feature you would like to implement strictly requires one, I would recommend trying them all and deciding which can will allow you to best achieve your goals.
 
 I initially started developing Render Track as a C++ Plugin, however, the `RenderQueueMonitorSuite` needed to properly watch the render queue [hasn't been working in recent versions of After Effects.](https://community.adobe.com/t5/after-effects-discussions/aegp-registerlistener-in-ae-sdk-2017-1/m-p/12046478#M171237) So I switched to a CEP Panel which ended up having some really nice benefits over developing a plugin!
 
@@ -82,7 +82,7 @@ function getStatusFromIndex(index) {
 }
 ```
 
->Babysteps! These first three functions I wrote were as simple as they get. They individually return the number of items in the Render Queue, and the name and status of each item. 
+>Baby steps! These first three functions I wrote were as simple as they get. They individually return the number of items in the Render Queue, and the name and status of each item. 
 
 Soon after I wrote some more complex functions in order to execute different tasks needed by the extension.
 
@@ -101,7 +101,7 @@ function getRQArray() {
 
 >This function returns an array of all the items in the Render Queue, with the name and render status of each item.
 
-ExtendScript can only return `strings` back to a CEP panel, so it is neccessary to include `JSON` and `stringify` where needed in order to return more complex objects, like the array returned above.
+ExtendScript can only return `strings` back to a CEP panel, so it is necessary to include `JSON` and `stringify` where needed in order to return more complex objects, like the array returned above.
 
 ```JSX
 function createArrayAndDequeue() {
@@ -117,7 +117,7 @@ function createArrayAndDequeue() {
 }
 ```
 
-Not everything in the Render Queue is ready to be encoded. Some items may have already been finished, purposefully skipped, missing output locations or have failed for various reasons. `createArrayAnddDequeue()` returns an array with the index of all items ***ready for encoding*** and de-queues them so that they can automatically be queued and rendered one at a time. 
+Not everything in the Render Queue is ready to be encoded. Some items may have already been finished, purposely skipped, missing output locations or have failed for various reasons. `createArrayAnddDequeue()` returns an array with the index of all items ***ready for encoding*** and de-queues them so that they can automatically be queued and rendered one at a time. 
 
 ExtendScript functions serve as the foundation for any CEP Extension/Panel. You can view the other ExtendScript functions I wrote for Render Tracker [here]([LINK](https://github.com/orenazad/Render-Tracker/blob/main/CEP-Panel/jsx/aftereffects.jsx)).
 
@@ -279,9 +279,9 @@ I personally thought it was extremely important to make Render Tracker as perfor
    2. An ideal solution doesn't require the user going out of it's way to use new functionality.I wanted Render Tracker to be a seamless solution, and adding another button wouldn't be inline with that goal.
   
 2. Check the Render Queue on a regular interval and update the database as needed. 
-   1. My concern was this wasn't a *performance-concious* approach and wanted to avoid constantly querying the render queue to avoid any performance impact they may have caused.
+   1. My concern was this wasn't a *performance-conscious* approach and wanted to avoid constantly querying the render queue to avoid any performance impact they may have caused.
 
- I used `performance.now()` to measure the execution time for checking the render queue and ran many different benchmarks and tests in order to determine the kind of impact (if any) they may have had. There was no measurable performance impact and the functions ran in an infinitesimaly small amount of time. After thought and input from frequent After Effects users, I decided it was an acceptable decision to regularly check the queue. However, I kept `renderAndUpdate()` to be used when remotely starting renders. 
+ I used `performance.now()` to measure the execution time for checking the render queue and ran many different benchmarks and tests in order to determine the kind of impact (if any) they may have had. There was no measurable performance impact and the functions ran in an infinitesimally small amount of time. After thought and input from frequent After Effects users, I decided it was an acceptable decision to regularly check the queue. However, I kept `renderAndUpdate()` to be used when remotely starting renders. 
 
  ```js
  async function checkRQChange() {
@@ -318,7 +318,7 @@ I used [Adobe's Spectrum CSS](https://spectrum.adobe.com) in order to make sure 
 ___
 ## Chapter 3: Into The Cloud!
 
-The work we've done so far is great and all, but the *whole point* was being able manage the queue and recieve notifications *anywhere*.
+The work we've done so far is great and all, but the *whole point* was being able manage the queue and receive notifications *anywhere*.
 
 Let's figure out how we can get all this data out of After Effects and *into the cloud*! 
 
@@ -329,9 +329,9 @@ Because Firebase is an extremely prevalent and popular platform with [great docu
 
 ### **Realtime Database**
 
-Each user's project and render queue info needs to be uploaded to an online database so that they can retrieve it from the mobile app, and recieve notifications when items have been completed. [Firebase offers two different databases for varying use-cases](https://firebase.google.com/docs/firestore/rtdb-vs-firestore). I decided to use the Realtime database because it was better suited to what Render Tracker needed. 
+Each user's project and render queue info needs to be uploaded to an online database so that they can retrieve it from the mobile app, and receive notifications when items have been completed. [Firebase offers two different databases for varying use-cases](https://firebase.google.com/docs/firestore/rtdb-vs-firestore). I decided to use the Realtime database because it was better suited to what Render Tracker needed. 
 
-The Realtime database is stored as a JSON data, and can be visualized as a tree. In our case, one of the branches is `users`, which holds the render queue info for each user under their Render Tracker `uid`.
+The Realtime database is stored as JSON data, and can be visualized as a tree. In our case, one of the branches is `users`, which holds the render queue info for each user under their Render Tracker `uid`.
 
 <img width="456" alt="users JSON Tree" src="https://user-images.githubusercontent.com/70298555/137468499-2c03c6cd-2315-4139-acea-c5eceaca3a32.png">
 
@@ -340,7 +340,7 @@ The Realtime database is stored as a JSON data, and can be visualized as a tree.
 > The status codes are directly returned from After Effects. `3019` means the item has successfully finished rendering! `3016` means an item is currently rendering, and `3015` means an item is queued and waiting to be rendered. The rest of the status codes are defined in the [documentation](https://ae-scripting.docsforadobe.dev/renderqueue/renderqueueitem/#renderqueueitem-status) if you would like to take a look at them.
 
 
-This information is pushed to the database in `writeUserData()`. Feel free to [go back](#cep-functions) and re-read that function!
+This information is pushed to the database in `writeUserData()`. Feel free to [go back](#cep-functions) and reread that function!
 
 One of the most useful features of the Realtime database is the ability to "listen" for changes on a branch. This feature is essential to Render Tracker as it powers the iOS UI and allows us to avoid constantly querying the database.
 
@@ -414,7 +414,7 @@ exports.sendDoneNotification = functions.database.ref("/users/{uid}/{index}/Rend
 ```
 > I developed database security rules so that users can't access the database outside of their own `uid` branches. The server-side functions, however, have admin privileges in order to listen to all branches. 
 
-While more complex, this function works off the same "listening" principal that we used earlier! It listens to changes in `RenderStatus` for every `uid` in the tree, and when any value is updated, it stores that `uid` and `index` for use. 
+While more complex, this function works off the same "listening" principle that we used earlier! It listens to changes in `RenderStatus` for every `uid` in the tree, and when any value is updated, it stores that `uid` and `index` for use. 
 
 >Another powerful feature is the ability to use `change.before.val()` and `change.after.val()` in order to compare values directly before and after an update. 
 
@@ -465,7 +465,7 @@ Beyond sending push notifications, there are several other cloud functions which
 
 ## Chapter 4: Down the iOS Rabbit-Hole
 
-Similiar to Firebase, I won't cover all the intracies of developing for iOS, and will only cover topics that were relevant to Render Tracker specifically! You can [find iOS documentation here](https://developer.apple.com/documentation/), and the iOS developer community is absolutely massive with tons of great resources to learn from and get started! If you would like to better understand how the full iOS app works, you can view the files in [the iOS directory of this repo](https://github.com/orenazad/Render-Tracker/tree/main/iOS).
+Similar to Firebase, I won't cover all the intricacies of developing for iOS, and will only cover topics that were relevant to Render Tracker specifically! You can [find iOS documentation here](https://developer.apple.com/documentation/), and the iOS developer community is absolutely massive with tons of great resources to learn from and get started! If you would like to better understand how the full iOS app works, you can view the files in [the iOS directory of this repo](https://github.com/orenazad/Render-Tracker/tree/main/iOS).
 
 Before we can start developing a UI, we need to pull our info down from the database.
 
@@ -499,7 +499,7 @@ class RQItemViewModel: ObservableObject {
 
 >The `RQItemViewModel`  class is an `ObservableObject`. Whenever an `ObservableObject` is updated or changed, the `View` is automatically refreshed to present the updated information.
 
- We use a listener to pull info from the database and keep up to data with any changes. The `CompName` and `RenderStatus` pulled from the database are used to create a new `RQItem`, which has it's own `RQItemView`. 
+ We use a listener to pull info from the database and keep up to data with any changes. The `CompName` and `RenderStatus` pulled from the database are used to create a new `RQItem`, which has its own `RQItemView`. 
 
  ```swift
  struct RQItemView: View {
@@ -699,7 +699,7 @@ struct AfterEffectsView: View {
     }
 }
 ```
-> The database listeners are started and stopped when the `View` appears and dissapears to make sure the displayed info is up to date, while ensuring listeners are only run when neccessary.
+> The database listeners are started and stopped when the `View` appears and disappears to make sure the displayed info is up to date, while ensuring listeners are only run when necessary.
 
 That's it! We've covered most major parts of the project. We began with Adobe ExtendScript to pull relevant information out of After Effects, and then used Adobe's Common Extensibility Platform (CEP) in order to move that data into Firebase's realtime database. From there, we added realtime push notifications, and then developed an iOS app to beautifully represent that data and lets users remotely control their queue!
 
@@ -709,8 +709,8 @@ That's it! We've covered most major parts of the project. We began with Adobe Ex
 
 It was very bittersweet. I was genuinely excited that Adobe was finally implementing this feature natively into After Effects. After all, I only decided to develop Render Tracker because I really believed it would be valuable to users like myself.
 
-The final product works works exactly as I envisoned it when this idea first came to mind. The display on the app is updated seamlessly and with no noticable latency. The notifications are sent out instantly and reliably. The render and clear-queue buttons on the app work quickly and flawlessly. I definitely feel that I made something I can be very proud of, and for that alone I think the project was worth it. 
+The final product works works exactly as I hoped. The display on the app is updated seamlessly and with no noticeable latency. The notifications are sent out instantly and reliably. The render and clear-queue buttons on the app work quickly and flawlessly. I definitely feel that I made something I can be very proud of, and for that alone I think the project was worth it. 
 
-Looking back, the whole process was quite enjoyable and undoubtedly a valuable and irreplacable learning experience. It provided software engineering and development experience which simply can't be taught in class. Besides, now I can share the code here and *hopefully* provide a resource for others. Maybe it just provides an interesting read!
+Looking back, the whole process was quite enjoyable and undoubtedly a valuable and irreplaceable learning experience. It provided software engineering and development experience which simply can't be taught in the classroom. Besides, now I can share the code here and *hopefully* provide a resource for others.
 
 While I walked through many of the crucial pieces of this project, I really only covered a small portion of the code I wrote. What I did display was only what ended up being successful, and doesn't represent the wild amount of learning, debugging, testing, reading, *improvement*, and occasional trial and error that got me here. Developing any big project isn't easy, but I believe it's worth it, so don't give up when it gets rough! I hope this project can serve as some form of inspiration for others looking to develop for Adobe applications or whatever else they may feel passionate about. 
