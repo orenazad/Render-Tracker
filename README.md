@@ -1,6 +1,6 @@
 # Render-Tracker<!-- omit in toc -->
 
-I've spent a lot of time working in After Effects and Premiere Pro. As much as I love these programs, I've always felt they had been lacking important functionality when it came to communicating encoding progress with users. As a computer science student at UC Berkeley, I decided to take the challenge myself and develop a solution. I created Render Tracker, a full-stack iOS application which lets users manage and track the render queue, and receive push notifications upon render completion!
+I've spent a lot of time working in After Effects and Premiere Pro. As much as I love these programs, I always felt they had been lacking important functionality when it came to communicating encoding progress with users. As a computer science student at UC Berkeley, I decided to take the challenge myself and develop a solution. I created Render Tracker, a full-stack iOS application which lets users manage and track the render queue, and receive push notifications upon render completion!
 
 I wanted to detail my experience and walkthrough the process for anyone interested in full-stack development, developing for Adobe applications, or for anyone who wants a (hopefully) fascinating read! If you are only interested in one part of this project, feel free to skip around to wherever you'd like.
 
